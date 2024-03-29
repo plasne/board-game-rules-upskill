@@ -13,15 +13,12 @@ inputs:
     type: string
     default: in Fury of Dracula 4th edition, what is Dracula's hand size?
 outputs:
-  groundedness:
+  eval_results:
     type: string
-    reference: ${groundedness.output}
-  relevancy:
+    reference: ${normalize.output}
+  eval_recorded_statuscode:
     type: string
-    reference: ${relevancy.output}
-  coherance:
-    type: string
-    reference: ${coherence.output}
+    reference: ${record_eval.output}
 nodes:
 - name: groundedness
   type: llm
@@ -33,6 +30,7 @@ nodes:
     temperature: 0
     answer: ${inputs.answer}
     context: ${inputs.context}
+    question: ${inputs.question}
   connection: open_ai_connection
   api: chat
 - name: relevancy
@@ -46,6 +44,7 @@ nodes:
     answer: ${inputs.answer}
     question: ${inputs.question}
     context: ${inputs.context}
+    chat_history_text: "[]"
   connection: open_ai_connection
   api: chat
 - name: coherence
@@ -60,3 +59,21 @@ nodes:
     question: ${inputs.question}
   connection: open_ai_connection
   api: chat
+- name: normalize
+  type: python
+  source:
+    type: code
+    path: normalize.py
+  inputs:
+    groundedness: ${groundedness.output}
+    relevancy: ${relevancy.output}
+    coherance: ${coherence.output}
+- name: record_eval
+  type: python
+  source:
+    type: code
+    path: record_eval.py
+  inputs:
+    evals: ${normalize.output}
+    eval_set: beta
+    eval_desc: no desc from me

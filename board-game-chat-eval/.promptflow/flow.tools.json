@@ -35,6 +35,11 @@
     "groundedness.jinja2": {
       "type": "llm",
       "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
         "answer": {
           "type": [
             "string"
@@ -51,17 +56,22 @@
     "relevancy.jinja2": {
       "type": "llm",
       "inputs": {
-        "answer": {
-          "type": [
-            "string"
-          ]
-        },
         "question": {
           "type": [
             "string"
           ]
         },
         "context": {
+          "type": [
+            "string"
+          ]
+        },
+        "answer": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history_text": {
           "type": [
             "string"
           ]
@@ -84,6 +94,50 @@
         }
       },
       "source": "coherence.jinja2"
+    },
+    "normalize.py": {
+      "type": "python",
+      "inputs": {
+        "groundedness": {
+          "type": [
+            "string"
+          ]
+        },
+        "relevancy": {
+          "type": [
+            "string"
+          ]
+        },
+        "coherance": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "normalize.py",
+      "function": "normalize"
+    },
+    "record_eval.py": {
+      "type": "python",
+      "inputs": {
+        "eval_set": {
+          "type": [
+            "string"
+          ]
+        },
+        "eval_desc": {
+          "type": [
+            "string"
+          ]
+        },
+        "evals": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "record_eval.py",
+      "function": "record_eval"
     }
   }
 }
