@@ -4,14 +4,127 @@ environment:
 inputs:
   answer:
     type: string
-    default: Dracula's hand size in Fury of Dracula 4th edition is five encounter
-      cards [doc1].
+    default: The hand limit for most hunters is three for each card type (item and
+      event cards) [doc3]. Dracula, on the other hand, has a hand limit of four
+      event cards [doc2]. Hunters can place their cards on the slots on their
+      character sheet if they don't want to hold them in their hands [doc3].
   context:
     type: string
-    default: a snappy little turtle
+    default: "[{'content': 'but neither Dracula nor the vampire \\\\nencounter card
+      are moved from their current locations.\\\\n\\\\n† While “Escape as Bat”
+      is part of  a hideout, it has no eff ect. It \\\\nserves as a reminder
+      that this card was played to move to this \\\\nlocation, and reduces the
+      number of  “Escape as Bat” cards in \\\\nDracula’s combat deck until it is
+      cleared or slides off  the sixth \\\\nspace of  the
+      trail.\\\\n\\\\nRelated Topics: Combat, Despair Tokens, Vampire
+      Encounters\\\\n\\\\nEscape as Mist\\\\n“Escape as Mist” is a Dracula
+      combat card.\\\\n\\\\n† If  Dracula plays “Escape as Mist” before he has
+      played a \\\\nnumber of  combat cards greater than the number of  despair
+      \\\\ntokens on the time track, the card is canceled. For example,
+      if  \\\\nno despair tokens are on the time track, he must play at least
+      \\\\none combat card and cannot escape until the next
+      round.\\\\n\\\\nRelated Topics: Combat, Despair Tokens, Vampire
+      Encounters\\\\n\\\\n Event Cards\\\\nEvent cards provide both hunters and
+      Dracula with helpful allies and \\\\nabilities.\\\\n\\\\n† Each event card
+      provides timing text that describes when the \\\\ncard can be played.
+      If  two or more cards can be played at the \\\\nsame time, the player can
+      play them in any order they choose.\\\\n\\\\n† Dracula and Dr. John Seward
+      can have up to four event cards \\\\nin their hands. Each other hunter can
+      have up to three event \\\\ncards in their hand. \\\\n\\\\n† When a
+      character receives an event card, they must read the \\\\ntiming of  when
+      the card can be played. If  it does not say play \\\\nimmediately, they
+      place the card in their hand of  event cards.\\\\n\\\\n† If  a player
+      draws an event card that would cause them to \\\\nexceed their hand limit,
+      they may play one or more of  their \\\\nevent cards, obeying the card’s
+      timing text. Then they must \\\\ndiscard down to their hand
+      limit.\\\\n\\\\n† Some event cards have an “Ally” eff ect. Players can
+      choose to \\\\neither play those cards immediately for an eff ect or as an
+      ally, \\\\nwhich remains in the play area and provides an ongoing eff ect.
+      \\\\n\\\\n† The event card discard pile can contain both faceup and',
+      'title': 'FoD_4E_Rules_Reference-JSeditREV_Online.pdf', 'chunk_id':
+      'b5976a1fc64f_aHR0cHM6Ly9zdHBlbGFzbmVhaTgzMzA1MDc2NjM3MzMuYmxvYi5jb3JlLnd\
+      pbmRvd3MubmV0L2JvYXJkLWdhbWUtZmlsZXMvRm9EXzRFX1J1bGVzX1JlZmVyZW5jZS1KU2Vk\
+      aXRSRVZfT25saW5lLnBkZg2_pages_20', 'search_score': 3.139858961105346},
+      {'content': 'eff ects, and all tokens in \\\\nthat hideout are placed back
+      in the token pool.\\\\n\\\\nWhat Are Hand Limits?\\\\nEach hunter sheet
+      has two cards slots, one at the top that is \\\\nused for item cards and
+      one at the bottom that is used for \\\\nevent cards.\\\\n\\\\nMost hunters
+      have a hand limit of  three for each card type \\\\n(item and event
+      cards), which is depicted by a hand limit \\\\nicon on their character
+      sheet in that card type’s slot.\\\\n\\\\nHunters can place their cards on
+      these \\\\nslots if  they don’t want to hold them in \\\\ntheir hands—this
+      is helpful for players \\\\nwho need to manage multiple hands \\\\nwhen
+      controlling more than one hunter.\\\\n\\\\nDracula has a hand limit
+      of  four event \\\\ncards, which is shown in the event card \\\\nslot on
+      the bottom of  his character \\\\nsheet. He does not have a hand limit
+      \\\\nfor encounter cards. Instead he has a \\\\nminimum hand size of  fi
+      ve (see “Placing an Encounter \\\\nCard” on page 8).\\\\n\\\\nMaturing
+      Encounters\\\\n\\\\nCard” on page 8).\\\\nresolved, advances the infl
+      uence track.\\\\n\\\\nThe matured eff ect on a vampire encounter will
+      instruct \\\\n\\\\nCard” on page 8).\\\\n\\\\nMatured Eff
+      ect\\\\n\\\\nTable Talk\\\\nDuring the game, players can talk with one
+      another and \\\\nshare information about the cards in their hands.
+      However, \\\\nall communication must be open and in the presence
+      of  \\\\nDracula. If  hunters share cards with one another, they must
+      \\\\nshare those cards with Dracula as well.\\\\n\\\\nWhen a hunter
+      performs a trade action, both hunters who \\\\nare part of  that trade
+      action can trade item cards and \\\\nticket tokens in secret and
+      communicate in private without \\\\nDracula seeing those cards and tokens
+      or hearing that \\\\nconversation.\\\\n\\\\ndistance they can move. If  a
+      ticket token does not have a yellow \\\\n\\\\nItem Hand Limit Event Hand
+      Limit\\\\n\\\\n\\\\n\\\\n12\\\\n\\\\nFinding the Trail\\\\nAfter a hunter
+      ends their movement on a city, Dracula must \\\\ncheck all of  the cards
+      on the trail. If  that location is a hideout \\\\non his trail, Dracula
+      reveals the location card from that hideout \\\\nby fl ipping it faceup.
+      The revealed location card remains faceup', 'title':
+      'FoD_4E_LearnToPlay-Online-OPT.pdf', 'chunk_id':
+      '4e08a4443dfa_aHR0cHM6Ly9zdHBlbGFzbmVhaTgzMzA1MDc2NjM3MzMuYmxvYi5jb3JlLnd\
+      pbmRvd3MubmV0L2JvYXJkLWdhbWUtZmlsZXMvRm9EXzRFX0xlYXJuVG9QbGF5LU9ubGluZS1P\
+      UFQucGRm0_pages_18', 'search_score': 3.1283700466156}, {'content': 'yellow
+      railways.\\\\n\\\\nFaceup Side\\\\n\\\\nFacedown Side\\\\n\\\\nMaturing
+      Encounters\\\\nDuring the Dracula phase, all hideouts on the trail slide
+      to \\\\ncreate space for Dracula to place a new card. If  there are six
+      \\\\nhideouts on the trail when this happens, the hideout on the sixth
+      \\\\nspace is MATURED.\\\\n\\\\nWhen Dracula matures a hideout, he may
+      resolve the matured \\\\neff ect on that hideout’s encounter card,
+      if  applicable, and discard \\\\nthe card. Then Dracula returns the
+      location card from the \\\\nhideout to the location deck. Unless otherwise
+      specifi ed by a card \\\\neff ect, the location is not
+      revealed.\\\\n\\\\n   Maturing\\\\nThe bottom of  some encounter cards
+      have a red section that \\\\nhas a MATURED EFFECT. If  a hideout \\\\nis
+      removed from the trail during \\\\nthe Dracula phase, Dracula may
+      \\\\nmature any of  the encounter cards \\\\nin that hideout by resolving
+      the text \\\\nin the “Matured Eff ect” section on \\\\nthose
+      cards.\\\\n\\\\nVampire Encounters\\\\nThere are three encounter cards
+      that contain the word \\\\n“Vampire” (“New Vampire,” “Aristocratic
+      Vampire,” and \\\\n“Reckless Vampire”). These encounters are called
+      VAMPIRE \\\\nENCOUNTERS. These cards have a matured eff ect that, when
+      \\\\nresolved, advances the infl uence track.\\\\n\\\\nThe matured eff ect
+      on a vampire encounter will instruct \\\\nDracula to CLEAR specifi c
+      hideouts on the trail. When a hideout \\\\nis cleared, all location cards
+      in that hideout are returned to the \\\\nlocation deck, all encounter
+      cards in that hideout are discarded \\\\nwithout resolving any of  their
+      matured eff ects, and all tokens in \\\\nthat hideout are placed back in
+      the token pool.\\\\n\\\\nWhat Are Hand Limits?\\\\nEach hunter sheet has
+      two cards slots, one at the top that is \\\\nused for item cards and one
+      at the bottom that is used for \\\\nevent cards.\\\\n\\\\nMost hunters
+      have a hand limit of  three for each card type \\\\n(item and event
+      cards), which is depicted by a hand limit \\\\nicon on their character
+      sheet in that card type’s slot.\\\\n\\\\nHunters can place their cards on
+      these \\\\nslots if  they don’t want to hold them in', 'title':
+      'FoD_4E_LearnToPlay-Online-OPT.pdf', 'chunk_id':
+      '4e08a4443dfa_aHR0cHM6Ly9zdHBlbGFzbmVhaTgzMzA1MDc2NjM3MzMuYmxvYi5jb3JlLnd\
+      pbmRvd3MubmV0L2JvYXJkLWdhbWUtZmlsZXMvRm9EXzRFX0xlYXJuVG9QbGF5LU9ubGluZS1P\
+      UFQucGRm0_pages_17', 'search_score': 2.779871225357055}]"
   question:
     type: string
-    default: in Fury of Dracula 4th edition, what is Dracula's hand size?
+    default: and event cards?
+  eval_set:
+    type: string
+    default: gamma
+  eval_desc:
+    type: string
+    default: no desc from me
 outputs:
   eval_results:
     type: string
@@ -41,7 +154,6 @@ nodes:
   inputs:
     deployment_name: gpt-4
     temperature: 0
-    answer: ${inputs.answer}
     question: ${inputs.question}
     context: ${inputs.context}
     chat_history_text: "[]"
@@ -75,5 +187,5 @@ nodes:
     path: record_eval.py
   inputs:
     evals: ${normalize.output}
-    eval_set: beta
-    eval_desc: no desc from me
+    eval_set: ${inputs.eval_set}
+    eval_desc: ${inputs.eval_desc}

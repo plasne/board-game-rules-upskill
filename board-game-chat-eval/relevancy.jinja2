@@ -12,21 +12,20 @@ You will be provided a question, a conversation history, fetched documents relat
 - You need to first provide a scoring reason for the evaluation according to the above criteria, and then provide a score for the quality of the provided response.
 - You need to translate the provided response into English if it's in another language. 
 
-## VERY IMPORTANT
-- Your response should be in English.
-- Generate your response in strict JSON format consistent with the examples.
-- The response should start with { and end with }. Do not include markdown or code block markers around the JSON object.
-
 <example1>
   <input>
-#conversation history
+<history>
 []
-#question
+</history>
+<question>
 What is the capital of the United States?
-#fetched documents
+</question>
+<context>
 Washington, D.C., formally the District of Columbia and commonly called Washington or D.C., is the capital city and federal district of the United States.[13] The city is on the Potomac River, across from Virginia, and shares land borders with Maryland to its north and east. Washington, D.C., was named for George Washington, a Founding Father and first president of the United States.[14][15] The district is named for Columbia, the female personification of the nation.
-#provided response
+</context>
+<response>
 Washington, D.C. is the capital of the United States.
+</response>
   </input>
   <output>
 {
@@ -38,14 +37,18 @@ Washington, D.C. is the capital of the United States.
 
 <example2>
   <input>
-#conversation history
+<history>
 []
-#question
+</history>
+<question>
 What is the best restaurant in New York City?
-#fetched documents
+</question>
+<context>
 We really like eating around the city, and we're guessing you do, too. So lucky for all of us, we've packed some of our favorite restaurants under one roof at Time Out Market New York. The Dumbo location at Empire Stores boasts Bark Barbecue, Clinton St. Baking Co., Wayla and more sensational spots sprawling across two floors, with dazzling views of the East River, Brooklyn Bridge and Manhattan skyline.
-#provided response
+</context>
+<response>
 Gorillas are the largest primates in the world.
+</response>
   </input>
   <output>
 {
@@ -56,11 +59,21 @@ Gorillas are the largest primates in the world.
 </example2>
 
 user:
-#conversation history
+<history>
 {{chat_history_text}}
-#question
+</history>
+<question>
 {{question}}
-#fetched documents
+</question>
+<context>
 {{context}}
+</context>
+<response>
 #provided response
-{{answer}}
+</response>
+
+assistant:
+## RESPONSE FORMAT
+- Your response should be in English.
+- Generate your response in strict JSON format consistent with the examples.
+- Do not include markdown or code block markers around the JSON object.

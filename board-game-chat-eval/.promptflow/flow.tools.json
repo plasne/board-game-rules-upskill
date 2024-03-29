@@ -35,17 +35,17 @@
     "groundedness.jinja2": {
       "type": "llm",
       "inputs": {
+        "context": {
+          "type": [
+            "string"
+          ]
+        },
         "question": {
           "type": [
             "string"
           ]
         },
         "answer": {
-          "type": [
-            "string"
-          ]
-        },
-        "context": {
           "type": [
             "string"
           ]
@@ -66,11 +66,6 @@
             "string"
           ]
         },
-        "answer": {
-          "type": [
-            "string"
-          ]
-        },
         "chat_history_text": {
           "type": [
             "string"
@@ -82,12 +77,12 @@
     "coherence.jinja2": {
       "type": "llm",
       "inputs": {
-        "answer": {
+        "question": {
           "type": [
             "string"
           ]
         },
-        "question": {
+        "answer": {
           "type": [
             "string"
           ]
