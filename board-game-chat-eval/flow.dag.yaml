@@ -1,0 +1,62 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  answer:
+    type: string
+    default: Dracula's hand size in Fury of Dracula 4th edition is five encounter
+      cards [doc1].
+  context:
+    type: string
+    default: a snappy little turtle
+  question:
+    type: string
+    default: in Fury of Dracula 4th edition, what is Dracula's hand size?
+outputs:
+  groundedness:
+    type: string
+    reference: ${groundedness.output}
+  relevancy:
+    type: string
+    reference: ${relevancy.output}
+  coherance:
+    type: string
+    reference: ${coherence.output}
+nodes:
+- name: groundedness
+  type: llm
+  source:
+    type: code
+    path: groundedness.jinja2
+  inputs:
+    deployment_name: gpt-4
+    temperature: 0
+    answer: ${inputs.answer}
+    context: ${inputs.context}
+  connection: open_ai_connection
+  api: chat
+- name: relevancy
+  type: llm
+  source:
+    type: code
+    path: relevancy.jinja2
+  inputs:
+    deployment_name: gpt-4
+    temperature: 0
+    answer: ${inputs.answer}
+    question: ${inputs.question}
+    context: ${inputs.context}
+  connection: open_ai_connection
+  api: chat
+- name: coherence
+  type: llm
+  source:
+    type: code
+    path: coherence.jinja2
+  inputs:
+    deployment_name: gpt-4
+    temperature: 0
+    answer: ${inputs.answer}
+    question: ${inputs.question}
+  connection: open_ai_connection
+  api: chat
