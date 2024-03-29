@@ -1,0 +1,2 @@
+{ "chat_history": [], "query": "in Fury of Dracula 4th edition, what is Dracula's hand size?", "mode": "prod" }
+{ "chat_history": [{"inputs": {"query": "in Fury of Dracula 4th edition, what is Dracula's hand size?"}, "outputs": {"answer": "Dracula's hand size in Fury of Dracula 4th edition is five for encounter cards [doc1]."}}], "query": "and event cards?", "mode": "prod" }

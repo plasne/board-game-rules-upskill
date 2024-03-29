@@ -1,0 +1,124 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  chat_history:
+    type: list
+    is_chat_history: true
+    default: []
+  query:
+    type: string
+    is_chat_input: true
+    default: in Fury of Dracula 3rd edition, what is Dracula's hand size?
+  mode:
+    type: string
+    default: debug
+outputs:
+  answer:
+    type: string
+    reference: ${respond.output}
+    is_chat_output: true
+nodes:
+- name: build_intent_prompt
+  type: prompt
+  source:
+    type: code
+    path: build_intent_prompt.jinja2
+  inputs:
+    chat_history: ${inputs.chat_history}
+    query: ${inputs.query}
+- name: determine_intent
+  type: llm
+  source:
+    type: code
+    path: determine_intent.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo-16k
+    temperature: 0
+    full_prompt: ${build_intent_prompt.output}
+    response_format:
+      type: text
+  connection: open_ai_connection
+  api: chat
+- name: extract_action
+  type: python
+  source:
+    type: code
+    path: extract_action.py
+  inputs:
+    intent: ${determine_intent.output}
+- name: debug_intent
+  type: python
+  source:
+    type: code
+    path: debug_intent.py
+  inputs:
+    input: ${build_intent_prompt.output}
+    output: ${determine_intent.output}
+    chat_history: ${inputs.chat_history}
+  activate:
+    when: ${inputs.mode}
+    is: debug
+- name: get_rules_context
+  type: python
+  source:
+    type: code
+    path: get_rules_context.py
+  inputs:
+    search_connection: search_connection
+    index_name: wizard-vectors
+    query_type: vectorSemanticHybrid
+    top_k: 10
+    semantic_configuration: wizard-vectors-semantic-configuration
+    vector_fields: vector
+    embedding_model_connection: open_ai_connection
+    embedding_model_name: text-embedding-ada-002
+    intent: ${determine_intent.output}
+  activate:
+    when: ${extract_action.output}
+    is: continue
+- name: trim_rules_context
+  type: python
+  source:
+    type: code
+    path: trim_rules_context.py
+  inputs:
+    context: ${get_rules_context.output}
+- name: build_chat_prompt
+  type: prompt
+  source:
+    type: code
+    path: build_chat_prompt.jinja2
+  inputs:
+    context: ${trim_rules_context.output}
+    user_query: ${inputs.query}
+- name: debug_chat
+  type: python
+  source:
+    type: code
+    path: debug_chat.py
+  inputs:
+    input: ${build_chat_prompt.output}
+  activate:
+    when: ${inputs.mode}
+    is: debug
+- name: chat
+  type: llm
+  source:
+    type: code
+    path: chat.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo-16k
+    max_tokens: 2000
+    temperature: 0
+    full_prompt: ${build_chat_prompt.output}
+  connection: open_ai_connection
+  api: chat
+- name: respond
+  type: python
+  source:
+    type: code
+    path: respond.py
+  inputs:
+    action: ${extract_action.output}
+    chat_output: ${chat.output}

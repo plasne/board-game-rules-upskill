@@ -1,0 +1,7 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Run.schema.json
+flow: ../board-game-chat/flow.dag.yaml
+data: ./eval01.jsonl
+column_mapping:
+  chat_history: ${data.chat_history}
+  query: ${data.query}
+  mode: ${data.mode}

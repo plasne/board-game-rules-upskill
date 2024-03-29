@@ -1,0 +1,209 @@
+{
+  "package": {},
+  "code": {
+    "chat.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "full_prompt": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "chat.jinja2"
+    },
+    "get_rules_context.py": {
+      "type": "python",
+      "inputs": {
+        "intent": {
+          "type": [
+            "string"
+          ]
+        },
+        "search_connection": {
+          "type": [
+            "CognitiveSearchConnection"
+          ]
+        },
+        "index_name": {
+          "type": [
+            "string"
+          ]
+        },
+        "query_type": {
+          "type": [
+            "string"
+          ]
+        },
+        "top_k": {
+          "type": [
+            "int"
+          ]
+        },
+        "semantic_configuration": {
+          "type": [
+            "string"
+          ]
+        },
+        "vector_fields": {
+          "type": [
+            "string"
+          ]
+        },
+        "embedding_model_connection": {
+          "type": [
+            "AzureOpenAIConnection"
+          ]
+        },
+        "embedding_model_name": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "get_rules_context.py",
+      "function": "get_rules_context"
+    },
+    "inject_rules_context.py": {
+      "type": "python",
+      "inputs": {
+        "input1": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "inject_rules_context.py",
+      "function": "my_python_tool"
+    },
+    "build_chat_prompt.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "context": {
+          "type": [
+            "string"
+          ]
+        },
+        "user_query": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "build_chat_prompt.jinja2"
+    },
+    "trim_rules_context.py": {
+      "type": "python",
+      "inputs": {
+        "context": {
+          "type": [
+            "list"
+          ]
+        }
+      },
+      "source": "trim_rules_context.py",
+      "function": "trim_rules_context"
+    },
+    "determine_intent.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "full_prompt": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "determine_intent.jinja2"
+    },
+    "build_intent_prompt.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "query": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "build_intent_prompt.jinja2"
+    },
+    "debug_intent.py": {
+      "type": "python",
+      "inputs": {
+        "input": {
+          "type": [
+            "string"
+          ]
+        },
+        "output": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "debug_intent.py",
+      "function": "debug_intent"
+    },
+    "debug_chat.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "text": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "debug_chat.jinja2"
+    },
+    "debug_chat.py": {
+      "type": "python",
+      "inputs": {
+        "input": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "debug_chat.py",
+      "function": "debug_chat"
+    },
+    "respond.py": {
+      "type": "python",
+      "inputs": {
+        "action": {
+          "type": [
+            "string"
+          ]
+        },
+        "chat_output": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "respond.py",
+      "function": "my_python_tool"
+    },
+    "extract_action.py": {
+      "type": "python",
+      "inputs": {
+        "intent": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "extract_action.py",
+      "function": "extract_action"
+    }
+  }
+}
