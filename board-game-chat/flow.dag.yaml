@@ -18,6 +18,9 @@ outputs:
     type: string
     reference: ${respond.output}
     is_chat_output: true
+  context:
+    type: string
+    reference: ${trim_rules_context.output}
 nodes:
 - name: build_intent_prompt
   type: prompt
